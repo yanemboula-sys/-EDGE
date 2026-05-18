@@ -22,7 +22,7 @@ proxy.on('error', (err, req, res) => {
 const server = http.createServer((req, res) => {
 
     // on laisse passer uniquement ton endpoint V2Ray
-    if (req.url.startsWith('/x/nom')) {
+    if (req.url.startsWith('/57216/@LaboKingFreeSurf')) {
         proxy.web(req, res);
     } else {
         res.writeHead(404);
@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
 
 server.on('upgrade', (req, socket, head) => {
 
-    if (req.url.startsWith('/x/nom')) {
+    if (req.url.startsWith('/57216/@LaboKingFreeSurf')) {
         proxy.ws(req, socket, head);
     } else {
         socket.destroy();
